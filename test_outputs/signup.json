@@ -1,0 +1,8 @@
+﻿{
+    "message":  "User registered successfully",
+    "user":  {
+                 "id":  "697fd1d5a7cef177151c19ba",
+                 "name":  "Postman Tester",
+                 "email":  "tester+1769991670@example.com"
+             }
+}

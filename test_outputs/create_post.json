@@ -1,0 +1,13 @@
+﻿{
+    "title":  "Test Post for Postman",
+    "body":  "This is a test post for LinkedIn screenshots",
+    "tags":  [
+                 "postman",
+                 "test"
+             ],
+    "author":  "697fd1d5a7cef177151c19ba",
+    "_id":  "697fd1d6a7cef177151c19be",
+    "createdAt":  "2026-02-01T22:21:10.084Z",
+    "updatedAt":  "2026-02-01T22:21:10.084Z",
+    "__v":  0
+}

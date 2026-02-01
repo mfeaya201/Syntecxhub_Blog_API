@@ -1,0 +1,41 @@
+﻿{
+    "total":  2,
+    "limit":  5,
+    "skip":  0,
+    "posts":  [
+                  {
+                      "_id":  "697fd1d6a7cef177151c19be",
+                      "title":  "Test Post for Postman",
+                      "body":  "This is a test post for LinkedIn screenshots",
+                      "tags":  [
+                                   "postman",
+                                   "test"
+                               ],
+                      "author":  {
+                                     "_id":  "697fd1d5a7cef177151c19ba",
+                                     "name":  "Postman Tester",
+                                     "email":  "tester+1769991670@example.com"
+                                 },
+                      "createdAt":  "2026-02-01T22:21:10.084Z",
+                      "updatedAt":  "2026-02-01T22:21:10.084Z",
+                      "__v":  0
+                  },
+                  {
+                      "_id":  "697fc72ca7cef177151c19a8",
+                      "title":  "Updated title",
+                      "body":  "This is a test",
+                      "tags":  [
+                                   "test",
+                                   "api"
+                               ],
+                      "author":  {
+                                     "_id":  "697fc72ba7cef177151c19a4",
+                                     "name":  "Tester",
+                                     "email":  "tester+1769988939@example.com"
+                                 },
+                      "createdAt":  "2026-02-01T21:35:40.035Z",
+                      "updatedAt":  "2026-02-01T21:35:40.384Z",
+                      "__v":  0
+                  }
+              ]
+}

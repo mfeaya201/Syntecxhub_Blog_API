@@ -1,0 +1,17 @@
+﻿{
+    "_id":  "697fd1d6a7cef177151c19be",
+    "title":  "Updated via Postman",
+    "body":  "Updated body",
+    "tags":  [
+                 "postman",
+                 "test"
+             ],
+    "author":  {
+                   "_id":  "697fd1d5a7cef177151c19ba",
+                   "name":  "Postman Tester",
+                   "email":  "tester+1769991670@example.com"
+               },
+    "createdAt":  "2026-02-01T22:21:10.084Z",
+    "updatedAt":  "2026-02-01T22:21:10.260Z",
+    "__v":  0
+}
