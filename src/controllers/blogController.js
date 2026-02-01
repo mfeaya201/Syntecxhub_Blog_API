@@ -19,7 +19,9 @@ const createPost = async (req, res) => {
 
     res.status(201).json(post);
   } catch (error) {
-    res.status(500).json({ message: "Failed to create blog post", error: error.message });
+    res
+      .status(500)
+      .json({ message: "Failed to create blog post", error: error.message });
   }
 };
 
@@ -70,7 +72,9 @@ const listPosts = async (req, res) => {
 
     res.json({ total, limit, skip, posts });
   } catch (error) {
-    res.status(500).json({ message: "Failed to list posts", error: error.message });
+    res
+      .status(500)
+      .json({ message: "Failed to list posts", error: error.message });
   }
 };
 
@@ -87,7 +91,9 @@ const getPostById = async (req, res) => {
 
     res.json(post);
   } catch (error) {
-    res.status(500).json({ message: "Failed to get post", error: error.message });
+    res
+      .status(500)
+      .json({ message: "Failed to get post", error: error.message });
   }
 };
 
@@ -104,7 +110,9 @@ const updatePost = async (req, res) => {
 
     // Authorization: only author can update
     if (!req.user || post.author.toString() !== req.user._id.toString()) {
-      return res.status(403).json({ message: "Not authorized to update this post" });
+      return res
+        .status(403)
+        .json({ message: "Not authorized to update this post" });
     }
 
     const { title, body, tags } = req.body;
@@ -113,10 +121,15 @@ const updatePost = async (req, res) => {
     if (tags !== undefined) post.tags = tags;
 
     await post.save();
-    const updated = await BlogPost.findById(id).populate("author", "name email");
+    const updated = await BlogPost.findById(id).populate(
+      "author",
+      "name email",
+    );
     res.json(updated);
   } catch (error) {
-    res.status(500).json({ message: "Failed to update post", error: error.message });
+    res
+      .status(500)
+      .json({ message: "Failed to update post", error: error.message });
   }
 };
 
@@ -132,13 +145,18 @@ const deletePost = async (req, res) => {
     if (!post) return res.status(404).json({ message: "Post not found" });
 
     if (!req.user || post.author.toString() !== req.user._id.toString()) {
-      return res.status(403).json({ message: "Not authorized to delete this post" });
+      return res
+        .status(403)
+        .json({ message: "Not authorized to delete this post" });
     }
 
-    await post.remove();
+    // Use deleteOne on the document to remove it
+    await post.deleteOne();
     res.json({ message: "Post deleted" });
   } catch (error) {
-    res.status(500).json({ message: "Failed to delete post", error: error.message });
+    res
+      .status(500)
+      .json({ message: "Failed to delete post", error: error.message });
   }
 };
 

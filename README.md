@@ -125,6 +125,21 @@ curl -X POST http://localhost:5000/api/auth/login -H "Content-Type: application/
 curl -X POST http://localhost:5000/api/posts -H "Content-Type: application/json" -H "Authorization: Bearer <TOKEN>" -d '{"title":"Hello","body":"World","tags":["intro"]}'
 ```
 
+## Example API responses
+
+Sanitized example responses from the test suite are available in the `test_outputs/` folder. These contain sample JSON for:
+
+- `signup.json` — signup response
+- `login.json` — login response (token redacted)
+- `create_post.json` — created post
+- `list_posts.json` — paginated list response
+- `get_post.json` — single post
+- `update_post.json` — updated post
+- `delete_post.json` — delete confirmation
+- `filtered_posts.json` — filtered list by tag
+
+You can use these files for screenshots or to validate API behavior during reviews.
+
 ## Tips
 
 - Add `PORT` to `.env` if you want to run on a different port.
