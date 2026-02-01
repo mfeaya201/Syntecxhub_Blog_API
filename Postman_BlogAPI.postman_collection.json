@@ -1,0 +1,84 @@
+{
+  "info": {
+    "name": "Blog API",
+    "_postman_id": "0c4f6f2e-0000-4000-8000-000000000000",
+    "description": "Collection for Blog API (signup, login, posts)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Signup",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\":\"Tester\",\"email\":\"tester@example.com\",\"password\":\"password\"}"
+        },
+        "url": { "raw": "{{base_url}}/api/auth/signup", "host": ["{{base_url}}"], "path": ["api","auth","signup"] }
+      }
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [ { "key": "Content-Type", "value": "application/json" } ],
+        "body": { "mode": "raw", "raw": "{\"email\":\"tester@example.com\",\"password\":\"password\"}" },
+        "url": { "raw": "{{base_url}}/api/auth/login", "host": ["{{base_url}}"], "path": ["api","auth","login"] }
+      }
+    },
+    {
+      "name": "Create Post",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Authorization", "value": "Bearer {{token}}" }
+        ],
+        "body": { "mode": "raw", "raw": "{\"title\":\"My Post\",\"body\":\"Hello world\",\"tags\":[\"intro\"]}" },
+        "url": { "raw": "{{base_url}}/api/posts", "host": ["{{base_url}}"], "path": ["api","posts"] }
+      }
+    },
+    {
+      "name": "List Posts",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "{{base_url}}/api/posts?limit=10&skip=0", "host": ["{{base_url}}"], "path": ["api","posts"], "query": [{"key":"limit","value":"10"},{"key":"skip","value":"0"}] }
+      }
+    },
+    {
+      "name": "Get Post",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{base_url}}/api/posts/:id", "host": ["{{base_url}}"], "path": ["api","posts",":id"] }
+      }
+    },
+    {
+      "name": "Update Post",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Authorization", "value": "Bearer {{token}}" }
+        ],
+        "body": { "mode": "raw", "raw": "{\"title\":\"Updated Title\"}" },
+        "url": { "raw": "{{base_url}}/api/posts/:id", "host": ["{{base_url}}"], "path": ["api","posts",":id"] }
+      }
+    },
+    {
+      "name": "Delete Post",
+      "request": {
+        "method": "DELETE",
+        "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+        "url": { "raw": "{{base_url}}/api/posts/:id", "host": ["{{base_url}}"], "path": ["api","posts",":id"] }
+      }
+    }
+  ],
+  "variable": [
+    { "key": "base_url", "value": "http://localhost:5000" },
+    { "key": "token", "value": "" }
+  ]
+}
